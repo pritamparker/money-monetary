@@ -1,0 +1,35 @@
+package com.natwest.userapi.repository;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+import com.natwest.userapi.model.UserDetails;
+@Repository
+public class UserRepository {
+	List<UserDetails> userlist;//instantiating the list
+	
+	public UserRepository() {
+		userlist = new ArrayList<>();
+		
+	}
+	
+	public List<UserDetails> getUserList(){
+		userlist.add(new UserDetails("adam", "adam@123", "Adam", 30));
+		userlist.add(new UserDetails("peter", "peter@123", "Peter Parker", 22));
+		userlist.add(new UserDetails("tony", "tony@123", "Tony Stark", 40));
+		userlist.add(new UserDetails("steve", "steve@123", "Steve Rogers", 33));
+		userlist.add(new UserDetails("john", "john@123", "John Wick", 45));
+		
+		return userlist;
+	}
+	public String adduser(UserDetails user) {
+		userlist.add(user);
+		return "user added";
+		
+	}
+	}
+	
+
+
+
+
+

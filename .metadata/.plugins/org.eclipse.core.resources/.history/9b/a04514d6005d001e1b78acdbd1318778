@@ -1,0 +1,5 @@
+package com.natwest.accountsapi.controller;
+
+public class AccountsController {
+
+}

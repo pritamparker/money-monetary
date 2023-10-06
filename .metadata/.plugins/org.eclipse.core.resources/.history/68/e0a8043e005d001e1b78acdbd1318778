@@ -1,0 +1,7 @@
+package com.natwest.accountsapi.repository;
+implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+
+public class AccountsRepository extends MongoRepository<Accounts, Integer> {
+
+}

@@ -1,0 +1,18 @@
+
+spring.application.name=transaction-api
+
+server.port=8083
+
+# database configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/natwestbatch3
+spring.datasource.username=root
+spring.datasource.password=root
+
+# hibernate configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# exceptions
+exception.transactionAlreadyExist=Transaction already exists
+exception.accountNoDoesNotExist=No transactions available for the given account no
+

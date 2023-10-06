@@ -1,0 +1,13 @@
+package com.natwest.accountsapi.service;
+
+import java.util.List;
+
+import com.natwest.accountsapi.model.Accounts;
+
+public interface IAccountsService {
+	
+	public Accounts addAccounts(Accounts acc);
+	public List<Accounts> findByUserid(int userid); //select * from accounts where userid=?;
+	public Accounts getAccountById(int accountno);
+
+}

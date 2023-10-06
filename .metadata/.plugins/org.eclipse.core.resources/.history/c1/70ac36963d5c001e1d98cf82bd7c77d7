@@ -1,0 +1,66 @@
+package com.natwest.userapi.service;
+
+import java.util.List;
+
+import com.natwest.userapi.exceptions.EmailIdAlreadyExist;
+import com.natwest.userapi.exceptions.EmailIdDoesNotExist;
+import com.natwest.userapi.exceptions.UserAlreadyExist;
+import com.natwest.userapi.exceptions.UserDoesNotExist;
+import com.natwest.userapi.model.UserDetails;
+
+public interface IUserService {
+    
+    // List of users findAll
+    public List<UserDetails> getUsers();
+
+    // Retrieving 1 user getReferenceById
+    public UserDetails getUserById(int userid) throws UserDoesNotExist;
+
+    // Adding a new user save
+    public void addUser(UserDetails user) throws UserAlreadyExist, EmailIdAlreadyExist;
+
+    // Updating user save
+    public void updateUser(UserDetails user) throws UserDoesNotExist;
+
+    // Deleting a user deleteById
+    public void deleteUser(int userid) throws UserDoesNotExist;
+
+    // Get user by email id
+    public UserDetails findByEmailid(String email) throws EmailIdDoesNotExist;
+    public UserDetails getByEmail(String email) throws EmailIdDoesNotExist;
+
+    // Validating user
+    public boolean validateUser(String email, String password);
+}
+I've added the updateUser method, which takes a UserDetails object as a parameter to update the user's details. Your service implementation should now include the logic to update a user's information based on the provided UserDetails.
+
+
+
+
+User
+{
+    "timestamp": "2023-09-26T07:15:55.165+00:00",
+    "status": 400,
+    "error": "Bad Request",
+    "path": "/api/v1/user/userlist/update/1"
+}
+i am getting this error in postman 
+and url as per aobve code is  localhost:8081/api/v1/user/userlist/update/1
+please debug
+ChatGPT
+The error you're encountering is a "Bad Request" with a status code of 400. This typically means there is an issue with the request body or how the request is structured. Let's debug this issue:
+
+Ensure you are sending a valid JSON request in the body when making a PUT request to update a user. The request body should match the structure of the UserDetails object, and all required fields should be included.
+
+Double-check the URL you are using in Postman. You mentioned that the URL is localhost:8081/api/v1/user/userlist/update/1, which appears correct based on your code. However, make sure that your Spring Boot application is indeed running on port 8081 and that the endpoint is correctly mapped.
+
+Check if the UserDetails class has the necessary setters and getters for the fields (e.g., setFirstName, getFirstName, etc.). This is essential for Spring to automatically map the request body to the UserDetails object.
+
+Ensure that the JSON content you are sending in the request body is well-formed and matches the expected structure of the UserDetails object.
+
+If you've verified these points and are still encountering the issue, it would be helpful to share the exact request body you are sending in Postman, as well as any relevant error messages or logs from your Spring Boot application. That additional information can help pinpoint the issue more precisely.
+
+
+
+
+

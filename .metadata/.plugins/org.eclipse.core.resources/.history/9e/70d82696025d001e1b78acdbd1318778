@@ -1,0 +1,39 @@
+package com.natwest.accountsapi.service;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.natwest.accountsapi.model.Accounts;
+import com.natwest.accountsapi.repository.AccountsRepository;
+
+@Service
+
+public class AccountsServiceImpl implements IAccountsService{
+	
+	@Autowired
+	private AccountsRepository accountsRepository;
+
+	@Override
+	public Accounts addAccounts(Accounts acc) {
+		Accounts a = accountsRepository.insert(acc);
+		return a;
+	}
+
+	@Override
+	public List<Accounts> findByUserid(int userid) {
+		// TODO Auto-generated method stub
+		return accountsRepository.findByUserid(userid);
+	}
+
+	@Override
+	public Accounts getAccountById(int accountno) {
+		Optional<Accounts> acc = accountsRepository.findById(accountno);
+		if(acc.isPresent()) {
+			return acc.get();
+		}
+		return null;
+	}
+
+}

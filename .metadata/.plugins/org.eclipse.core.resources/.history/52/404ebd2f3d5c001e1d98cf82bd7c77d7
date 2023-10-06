@@ -1,0 +1,34 @@
+package com.natwest.userapi.service;
+
+import java.util.List;
+
+import com.natwest.userapi.exceptions.EmailIdAlreadyExist;
+import com.natwest.userapi.exceptions.EmailIdDoesNotExist;
+import com.natwest.userapi.exceptions.UserAlreadyExist;
+import com.natwest.userapi.exceptions.UserDoesNotExist;
+import com.natwest.userapi.model.UserDetails;
+
+public interface IUserService {
+	
+	//list of users findAll
+	public List<UserDetails> getUsers();
+	
+	//retrieving 1 user getReferenceById
+	public UserDetails getUserById(int userid) throws UserDoesNotExist;
+	
+	//adding a new user save
+	public void addUser(UserDetails user) throws UserAlreadyExist, EmailIdAlreadyExist;
+	
+	//updating user save
+	public void updateUser(UserDetails user) throws UserDoesNotExist;
+	
+	//deleting a user deleteById
+	public void deleteUser(int userid) throws UserDoesNotExist;
+	
+	//getuserbyemailid
+	public UserDetails findByEmailid(String email) throws EmailIdDoesNotExist;
+	public UserDetails getByEmail(String email) throws EmailIdDoesNotExist;
+	
+	//validating user
+	public boolean validateUser(String email, String password);
+}

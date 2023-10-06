@@ -1,0 +1,130 @@
+2023-09-28 08:46:58 [main] INFO  c.n.t.TransactionApiApplication - Starting TransactionApiApplication using Java 17.0.7 with PID 7424 (C:\Users\RBS\Desktop\Sep_25\transaction-api\target\classes started by RBS in C:\Users\RBS\Desktop\Sep_25\transaction-api)
+2023-09-28 08:46:58 [main] INFO  c.n.t.TransactionApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-09-28 08:46:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-28 08:46:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2023-09-28 08:46:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2023-09-28 08:46:59 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2023-09-28 08:46:59 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2023-09-28 08:46:59 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2023-09-28 08:46:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2023-09-28 08:46:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-09-28 08:46:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-28 08:46:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-09-28 08:46:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1279 ms
+2023-09-28 08:46:59 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-28 08:46:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-09-28 08:46:59 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-09-28 08:46:59 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-09-28 08:46:59 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-28 08:46:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-09-28 08:46:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ec8d9b2
+2023-09-28 08:46:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-09-28 08:47:00 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-09-28 08:47:00 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-28 08:47:00 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-28 08:47:01 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-28 08:47:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2023-09-28 08:47:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2023-09-28 08:47:01 [main] INFO  c.n.t.TransactionApiApplication - Started TransactionApiApplication in 3.888 seconds (process running for 4.738)
+2023-09-28 08:53:50 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-28 08:53:50 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-09-28 08:53:50 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@d889911
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=0, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=null, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 08:53:59 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=52, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:53:59.931039, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:00 [http-nio-8083-exec-3] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=52, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:53:59.931039, status=Completed, particulars=paid at the Amazon],[]>
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@2f52d192
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=0, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=null, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=53, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:54:43.474015500, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:43 [http-nio-8083-exec-4] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=53, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:54:43.474015500, status=Completed, particulars=paid at the Amazon],[]>
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@4a0f0a7d
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=0, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=null, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=54, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:54:45.868254100, status=Completed, particulars=paid at the Amazon]]
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:54:45 [http-nio-8083-exec-5] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=54, transactionType=CR, accountno=333545, amount=4.6644756E7, transationTimestamp=2023-09-28T08:54:45.868254100, status=Completed, particulars=paid at the Amazon],[]>
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@56e23dc6
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=10, transactionType=DR, accountno=123456, amount=4000.0, transationTimestamp=null, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=55, transactionType=DR, accountno=123456, amount=4000.0, transationTimestamp=2023-09-28T08:58:52.719688900, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 08:58:52 [http-nio-8083-exec-8] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=55, transactionType=DR, accountno=123456, amount=4000.0, transationTimestamp=2023-09-28T08:58:52.719688900, status=pending, particulars=Paid at Flipkart],[]>
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@14ec7bf4
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=10, transactionType=CR, accountno=123456, amount=4000.0, transationTimestamp=null, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=56, transactionType=CR, accountno=123456, amount=4000.0, transationTimestamp=2023-09-28T09:00:46.491873, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:00:46 [http-nio-8083-exec-1] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=56, transactionType=CR, accountno=123456, amount=4000.0, transationTimestamp=2023-09-28T09:00:46.491873, status=pending, particulars=Paid at Flipkart],[]>
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method arguments:[Ljava.lang.Object;@eae3dd
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - **************Around advice called***********************
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Declarative name: com.natwest.transactionapi.controller.TransactionController
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=10, transactionType=CR, accountno=223456, amount=4000.0, transationTimestamp=null, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - This is before log created
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method: addTransaction
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Method Arguments: [Transaction [transactionId=57, transactionType=CR, accountno=223456, amount=4000.0, transationTimestamp=2023-09-28T09:02:29.076188100, status=pending, particulars=Paid at Flipkart]]
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - This is after log created
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - ********************************************
+2023-09-28 09:02:29 [http-nio-8083-exec-7] INFO  c.n.t.aspect.AspectConfig - Output:<201 CREATED Created,Transaction [transactionId=57, transactionType=CR, accountno=223456, amount=4000.0, transationTimestamp=2023-09-28T09:02:29.076188100, status=pending, particulars=Paid at Flipkart],[]>
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-09-28 09:04:42 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -1,0 +1,5 @@
+package com.natwest.accountsapi.repository;
+
+public class AccountsRepository {
+
+}

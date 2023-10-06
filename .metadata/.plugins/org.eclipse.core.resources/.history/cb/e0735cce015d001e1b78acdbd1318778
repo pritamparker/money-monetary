@@ -1,0 +1,5 @@
+package com.natwest.accountsapi.service;
+
+public interface IAccountService {
+
+}

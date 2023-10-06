@@ -1,0 +1,24 @@
+package com.natwest.userapi.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+public class UserController {
+	@GetMapping
+	public String getHome() {
+		return "Welcome to home page";
+	}
+
+	@GetMapping("/message")
+	public String getMessage() {
+		return "Hello Natwest";
+	}
+	
+	@GetMapping("/users")
+	public List<Userdetails> getUserList(){
+		List<Userdetails> userlist = userRepository.getuse
+				return userlist;
+	}
+}

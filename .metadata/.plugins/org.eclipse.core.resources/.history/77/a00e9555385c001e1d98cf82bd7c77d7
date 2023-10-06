@@ -1,0 +1,5 @@
+package com.natwest.userapi.service;
+
+public interface IUserService {
+
+}

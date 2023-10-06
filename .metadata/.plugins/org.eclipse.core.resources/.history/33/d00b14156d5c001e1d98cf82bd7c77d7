@@ -1,0 +1,109 @@
+package com.natwest.userapi.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.natwest.userapi.exceptions.UserAlreadyExist;
+import com.natwest.userapi.exceptions.UserDoesNotExist;
+import com.natwest.userapi.model.UserDetails;
+import com.natwest.userapi.service.UserServiceImpl;
+
+@SpringBootTest
+class UserControllerTest {
+	@Mock
+	private UserServiceImpl userService;
+	
+	@InjectMocks
+	private UserController userController;
+	
+	MockMvc mockmvc;
+	UserDetails user;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		mockmvc = MockMvcBuilders.standaloneSetup(userController).build();
+		user = new UserDetails(1, "bob@gmail.com", "Bob", "Cad", "bob@123", "6334343443");
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	
+	@Test
+	public void givenUserToSaveThenShouldReturnSavedUser() throws Exception {
+	    // Use doNothing() for void methods
+	    doNothing().when(userService).addUser(any());
+
+	    mockmvc.perform(post("/api/v1/user/adduser")
+	            .contentType(MediaType.APPLICATION_JSON)
+	            .content(asJsonString(user)))
+	            .andExpect(status().isCreated())
+	            .andDo(MockMvcResultHandlers.print());
+
+	    verify(userService, times(1)).addUser(any());
+	}
+	
+
+
+
+
+
+	
+	@Test
+	public void givenUserToSaveThenShouldReturnSavedUserThrowsUserAlreadyExist() throws Exception {
+	    // Use doThrow() for void methods
+	    doThrow(UserAlreadyExist.class).when(userService).addUser(any());
+
+	    mockmvc.perform(post("/api/v1/user/adduser")
+	            .contentType(MediaType.APPLICATION_JSON)
+	            .content(asJsonString(user)))
+	            .andExpect(status().isConflict())
+	            .andDo(MockMvcResultHandlers.print());
+
+	    verify(userService, times(1)).addUser(any());
+	}
+
+	
+	
+	public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+}

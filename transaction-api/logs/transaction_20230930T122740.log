@@ -1,0 +1,59 @@
+2023-09-30 12:27:41 [main] INFO  c.n.t.TransactionApiApplication - Starting TransactionApiApplication using Java 17.0.7 with PID 16596 (C:\Users\RBS\Desktop\Sep_25\transaction-api\target\classes started by RBS in C:\Users\RBS\Desktop\Sep_25\transaction-api)
+2023-09-30 12:27:41 [main] INFO  c.n.t.TransactionApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-09-30 12:27:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-30 12:27:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 1 JPA repository interfaces.
+2023-09-30 12:27:42 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=9dc6c180-9096-3330-b775-7d64345f7a4c
+2023-09-30 12:27:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2023-09-30 12:27:43 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2023-09-30 12:27:43 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2023-09-30 12:27:43 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2023-09-30 12:27:43 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2023-09-30 12:27:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-09-30 12:27:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-30 12:27:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-09-30 12:27:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1912 ms
+2023-09-30 12:27:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-30 12:27:44 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-09-30 12:27:44 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-09-30 12:27:44 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-09-30 12:27:44 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-30 12:27:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-09-30 12:27:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3265995e
+2023-09-30 12:27:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-09-30 12:27:45 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-09-30 12:27:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-30 12:27:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-30 12:27:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-30 12:27:47 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2023-09-30 12:27:47 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-09-30 12:27:47 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-09-30 12:27:47 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-09-30 12:27:47 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-09-30 12:27:48 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2023-09-30 12:27:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-09-30 12:27:48 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-09-30 12:27:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1696057068577 with initial instances count: 0
+2023-09-30 12:27:48 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TRANSACTION-API with eureka with status UP
+2023-09-30 12:27:48 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1696057068581, current=UP, previous=STARTING]
+2023-09-30 12:27:48 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSACTION-API/192.168.1.42:transaction-api:8083: registering service...
+2023-09-30 12:27:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2023-09-30 12:27:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2023-09-30 12:27:48 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8083
+2023-09-30 12:27:48 [main] INFO  c.n.t.TransactionApiApplication - Started TransactionApiApplication in 7.357 seconds (process running for 8.477)
+2023-09-30 12:27:48 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSACTION-API/192.168.1.42:transaction-api:8083 - registration status: 204
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-09-30 12:28:18 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2023-09-30 12:32:47 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

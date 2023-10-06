@@ -1,0 +1,11 @@
+# application name
+spring.application.name=accounts-api
+
+# port number
+server.port=8082
+
+# database configuration
+spring.data.mongodb.database=natwestbatch3
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.uri=mongodb://localhost:27017

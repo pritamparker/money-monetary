@@ -1,0 +1,73 @@
+package com.natwest.accountsapi.model;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document
+public class Accounts {
+	
+	@Id
+	private int accountno;
+	private String accounttype;
+	private int userid;
+	private double balance;
+	private LocalDate accountstartdate;
+	private LocalDateTime transactionTime;
+	public Accounts() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Accounts(int accountno, String accounttype, int userid, double balance, LocalDate accountstartdate,
+			LocalDateTime transactionTime) {
+		super();
+		this.accountno = accountno;
+		this.accounttype = accounttype;
+		this.userid = userid;
+		this.balance = balance;
+		this.accountstartdate = accountstartdate;
+		this.transactionTime = transactionTime;
+	}
+	public int getAccountno() {
+		return accountno;
+	}
+	public void setAccountno(int accountno) {
+		this.accountno = accountno;
+	}
+	public String getAccounttype() {
+		return accounttype;
+	}
+	public void setAccounttype(String accounttype) {
+		this.accounttype = accounttype;
+	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public LocalDate getAccountstartdate() {
+		return accountstartdate;
+	}
+	public void setAccountstartdate(LocalDate accountstartdate) {
+		this.accountstartdate = accountstartdate;
+	}
+	public LocalDateTime getTransactionTime() {
+		return transactionTime;
+	}
+	public void setTransactionTime(LocalDateTime transactionTime) {
+		this.transactionTime = transactionTime;
+	}
+	@Override
+	public String toString() {
+		return "Accounts [accountno=" + accountno + ", accounttype=" + accounttype + ", userid=" + userid + ", balance="
+				+ balance + ", accountstartdate=" + accountstartdate + ", transactionTime=" + transactionTime + "]";
+	}
+	
+	
+}

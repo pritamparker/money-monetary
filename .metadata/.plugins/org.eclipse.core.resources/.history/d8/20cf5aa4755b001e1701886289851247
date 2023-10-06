@@ -1,0 +1,69 @@
+package com.natwest.userapi.controller;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.natwest.userapi.model.UserDetails;
+import com.natwest.userapi.repository.UserRepository;
+@RestController
+public class UserController {
+	private UserRepository userRepository;
+	
+	public UserRepository getUserRepository() {
+		return userRepository;
+	}
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
+	
+//	@GetMapping
+//	public String getHome() {
+//		return "Welcome to homepage";
+//	}
+//	
+//	@GetMapping("/message")
+//	public String getMessage() {
+//		return "Hello natwest";
+//	}
+//	
+//	@GetMapping("/users")
+//	public List<UserDetails> getUserList(){
+//		List<UserDetails> userlist = userRepository.getUserList();
+//		return userlist;
+//	}
+	
+	 @GetMapping("/")
+	    public ResponseEntity<String> getHome() {
+	        return new ResponseEntity<>("Welcome to homepage", HttpStatus.OK);
+	    }
+	 
+	 @GetMapping("/message")
+	    public ResponseEntity<String> getMessage() {
+	        return new ResponseEntity<>("Hello Natwest", HttpStatus.CREATED);
+	    }
+	 @GetMapping("/users")
+	 public ResponseEntity<List<UserDetails>> getUserList() {
+	     List<UserDetails> userLists = userRepository.getUserList();
+	     return new ResponseEntity<>(userLists, HttpStatus.OK);
+	 }
+
+	 @PostMapping("/adduser")
+	 public ResponseEntity<String> adduser(@RequestBody Userdetails user) {
+	     String message = userRepository.adduser(user);
+	     return new ResponseEntity<>(message, HttpStatus.CREATED);
+	 }
+
+	 
+	 
+	}		
+	
+
+		
+		
+		
+		

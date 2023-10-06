@@ -1,0 +1,7 @@
+package com.natwest.userapi.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.natwest.userapi.model.UserDetails;
+@Repository											//table name , data type of primary key
+public interface UserRepository extends JpaRepository<UserDetails, Integer> {
+}

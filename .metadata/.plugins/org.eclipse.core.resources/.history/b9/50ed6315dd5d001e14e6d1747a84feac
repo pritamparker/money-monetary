@@ -1,0 +1,8 @@
+package com.natwest.apigateway.configuration;
+
+
+
+@Configuration
+public class CorsConfiguration {
+
+}

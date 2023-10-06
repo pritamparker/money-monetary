@@ -1,0 +1,101 @@
+package com.natwest.userapi.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.natwest.userapi.exceptions.EmailIdAlreadyExist;
+import com.natwest.userapi.exceptions.EmailIdDoesNotExist;
+import com.natwest.userapi.exceptions.UserAlreadyExist;
+import com.natwest.userapi.exceptions.UserDoesNotExist;
+import com.natwest.userapi.model.UserDetails;
+import com.natwest.userapi.service.IUserService;
+
+@RestController
+@RequestMapping("/api/v1/user")
+public class UserController {
+	
+	@Autowired
+	IUserService userService;
+	
+	@GetMapping("/userlist")
+	public ResponseEntity<List<UserDetails>> userList() {
+		return new ResponseEntity<List<UserDetails>>(userService.getUsers(),HttpStatus.OK);
+	}
+	
+	@PostMapping("/adduser")
+	public ResponseEntity<?> adduser(@RequestBody UserDetails user) {
+		try {
+			userService.addUser(user);
+			return new ResponseEntity<String>("User added", HttpStatus.CREATED);
+			
+		} catch (UserAlreadyExist e) {
+			
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.CONFLICT);
+			
+		} catch (EmailIdAlreadyExist e) {
+			
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.CONFLICT);
+		}
+	}
+	
+	@GetMapping("/userlist/userbyid/{userid}")
+	public ResponseEntity<?> getUserById(@PathVariable int userid) {
+		try {
+			
+			UserDetails u=userService.getUserById(userid);
+			return new ResponseEntity<UserDetails>(u, HttpStatus.OK);
+			
+		} catch (UserDoesNotExist e) {
+			
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@GetMapping("/userlist/userbyemail/{email}")
+	public ResponseEntity<?> getByEmail(@PathVariable String email) {
+		try {
+			
+			UserDetails u=userService.getByEmail(email);
+			return new ResponseEntity<UserDetails>(u,HttpStatus.OK);
+			
+		} catch (EmailIdDoesNotExist e) {
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@DeleteMapping("/userlist/delete/{userid}")
+	public ResponseEntity<?> deleteById(@PathVariable int userid) {
+		try {
+			userService.deleteUser(userid);
+			return new ResponseEntity<String>("User deleted",HttpStatus.OK);
+		} catch (UserDoesNotExist e) {
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@PutMapping("userlist/edit/{userid}")
+	public ResponseEntity<?> updateUser(@PathVariable int userid, @RequestBody UserDetails updatedUser) {
+	    try {
+	        // Set the user ID based on the path variable
+	        updatedUser.setUserid(userid);
+	        
+	        userService.updateUser(updatedUser);
+	        return new ResponseEntity<String>("User updated", HttpStatus.OK);
+	    } catch (UserDoesNotExist e) {
+	        return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+	    }
+	}
+
+}

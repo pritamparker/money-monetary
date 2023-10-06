@@ -1,0 +1,5 @@
+package com.natwest.userapi.repository;
+
+public interface UserRepository {
+
+}

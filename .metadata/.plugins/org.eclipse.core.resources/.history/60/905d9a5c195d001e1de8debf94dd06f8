@@ -1,0 +1,5 @@
+package com.natwest.transactionapi.repository;
+
+public class TransactionRepository {
+
+}

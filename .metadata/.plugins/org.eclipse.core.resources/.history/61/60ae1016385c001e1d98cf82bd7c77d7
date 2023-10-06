@@ -1,0 +1,8 @@
+package com.natwest.userapi.exceptions;
+
+public class EmailIdAlreadyExist extends Exception {
+	
+	public EmailIdAlreadyExist(String message) {
+		super(message);
+	}
+}

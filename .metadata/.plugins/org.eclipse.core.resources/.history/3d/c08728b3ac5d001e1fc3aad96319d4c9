@@ -1,0 +1,5 @@
+package com.natwest.transactionapi.aspect;
+
+public class TransactionAPIAspect {
+
+}

@@ -1,0 +1,15 @@
+package com.natwest.accountsapi.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import com.natwest.accountsapi.model.Accounts;
+
+@Repository
+public interface AccountsRepository extends MongoRepository<Accounts, Integer>{
+	
+	public List<Accounts> findByUserid(int userid);
+
+}

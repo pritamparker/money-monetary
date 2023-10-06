@@ -1,0 +1,37 @@
+package com.natwest.userapi.controller;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.natwest.userapi.model.UserDetails;
+import com.natwest.userapi.repository.UserRepository;
+@RestController
+public class UserController {
+	private UserRepository userRepository;
+	
+	public UserRepository getUserRepository() {
+		return userRepository;
+	}
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
+	
+	@GetMapping
+	public String getHome() {
+		return "Welcome to homepage";
+	}
+	
+	@GetMapping("/message")
+	public String getMessage() {
+		return "Hello natwest";
+	}
+	
+	@GetMapping("/users")
+	public List<UserDetails> getUserList(){
+		List<UserDetails> userlist = userRepository.getUserList();
+		return userlist;
+	}
+	
+}

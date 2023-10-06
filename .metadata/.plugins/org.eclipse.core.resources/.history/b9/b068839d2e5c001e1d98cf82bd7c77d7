@@ -1,0 +1,28 @@
+package com.natwest.userapi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.natwest.userapi.model.UserDetails;
+import com.natwest.userapi.service.UserServiceImpl;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/users")
+public class UserController {
+
+    @Autowired
+    private UserServiceImpl userService;
+
+    @GetMapping("/userlist")
+    public ResponseEntity<List<UserDetails>> getUserList() {
+        return new ResponseEntity<>(userService.getUserList(), HttpStatus.OK);
+    }
+
+    @PostMapping("/adduser")
+    public ResponseEntity<String> addUser(@RequestBody UserDetails user) {
+        String output = userService.addUser(user);
+        return new ResponseEntity<>(output, HttpStatus.CREATED);
+    }
+}

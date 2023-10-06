@@ -1,0 +1,84 @@
+ackage com.natwest.userapi.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.natwest.userapi.model.UserDetails;
+
+@SpringBootTest
+class UserRepositoryTest {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	private UserDetails user;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+		System.out.println("Test for Repository layer initiated");
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+		System.out.println("Test completed");
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		user = new UserDetails(1, "bob@gmail.com", "Bob", "Cad", "bob@123", "6334343443");
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		userRepository.deleteAll();
+	}
+
+	@Test
+	public void givenTheUserShouldReturnUserObject() {
+		
+		userRepository.save(user);
+		Optional<UserDetails> u = userRepository.findById(user.getUserid());
+		
+		if(u.isPresent()) {
+			u.get();
+			assertNotNull(u,"The user is retrieved which is saved");
+		}		
+		
+	}
+	
+	@Test
+	public void givenUserDeletedThenReturnNull() {
+		userRepository.save(user); //saved the user
+		userRepository.deleteById(user.getUserid()); //deleted the user
+		
+		UserDetails u = userRepository.findById(user.getUserid()).orElse(null);
+		
+		assertNull(u,"As the user is deleted, the object is null");
+	}
+	
+	@Test
+	public void givenUserListShouldReturnCountOfUsers() {
+		
+		UserDetails u1 = new UserDetails(1, "bob@gmail.com", "Bob", "Cad", "bob@123", "6334343443");
+		UserDetails u2 = new UserDetails(2, "ram@gmail.com", "Ram", "Sh", "ram@123", "6334343443");
+		
+		userRepository.save(u1);
+		userRepository.save(u2);
+		
+		List<UserDetails> userlist = userRepository.findAll();
+		
+		assertEquals(2, userlist.size());
+		assertEquals("bob@gmail.com", userlist.get(0).getEmailid());
+	}
+
+}
